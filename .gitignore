@@ -1,0 +1,51 @@
+# .gitignore for SafeDyn Method Repository
+
+# secrets
+.env
+*.key
+*token*
+*secret*
+credentials*
+
+# model weights
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.safetensors
+*.tar
+
+# datasets / scenes
+data/
+datasets/
+scene_datasets/
+mp3d/
+*.glb
+*.navmesh
+*.json.gz
+
+# experiment outputs
+outputs/
+logs/
+wandb/
+runs/
+*.xlsx
+*.pdf
+*.png
+*.mp4
+
+# python/cache
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

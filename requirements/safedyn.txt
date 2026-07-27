@@ -1,0 +1,17 @@
+### SafeDyn Method Requirements
+
+# Core requirements — SafeDyn certificate chain works with just numpy+scipy
+numpy>=1.21
+scipy>=1.7
+
+# Optional: PyTorch (for ETPNav integration)
+# torch>=1.10
+
+# Optional: YAML config loading
+pyyaml>=6.0
+
+# Optional: Transformers (for ETPNav multimodal encoding)
+# transformers>=4.20
+
+# Optional: msgpack (for serialization)
+# msgpack>=1.0

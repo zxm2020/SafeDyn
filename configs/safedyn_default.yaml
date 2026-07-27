@@ -1,0 +1,87 @@
+# configs/digital_guard.yaml
+# Phase 2: Tracking + Dual Tube configuration
+# Coordinate system: x-z-yaw
+
+seed: 0
+
+simulation:
+  dt: 0.05
+  max_steps: 600
+  scene: "empty"
+  use_rgb: false
+  use_depth: false
+  use_ground_truth_dynamic_entities: true
+
+robot:
+  radius: 0.25
+  max_linear_velocity: 0.8
+  max_angular_velocity: 1.2
+  max_brake_acceleration: 1.0
+  control_dt: 0.05
+
+dynamic_entities:
+  max_velocity: 1.2
+  max_acceleration: 1.0
+  observation_noise_std: 0.03
+  tracking_noise_std: 0.05
+  num_entities: 5
+
+# ── Phase 2: Tracking config ──────────────────────────────────────────
+tracking:
+  dt: 0.05
+  process_noise: 0.05          # m/s / sqrt(s)
+  observation_noise: 0.03       # m (position noise per observation)
+  confidence_decay: 0.9
+  max_missed_steps: 20
+  low_confidence_threshold: 0.4
+  nearby_distance_threshold: 2.0
+  assignment_distance_threshold: 1.5
+
+# ── Phase 2: Tube config ────────────────────────────────────────────
+tube:
+  horizon_steps: 20
+  dt: 0.05
+  planning_margin: 0.20       # B_plan margin (m)
+  certified_margin: 0.45       # B_cert margin (m) — MUST be >= planning_margin
+  missed_observation_inflation: 0.05  # per missed step
+  covariance_scale_plan: 1.0
+  covariance_scale_cert: 2.0    # MUST be >= covariance_scale_plan
+
+# Safety constraint check — validates at startup
+# If certified_margin < planning_margin, program exits with clear error.
+
+# ── Phase 2: Phase 1 placeholders ──────────────────────────────────
+# The following are NOT implemented in Phase 2. These keys exist for config completeness only.
+planner:
+  type: "placeholder_mppi_not_yet_implemented"
+  frequency: 5
+  horizon: 30
+  num_samples: 512
+  temperature: 1.0
+
+risk:
+  use_dual_tube: true
+  myopic_discount: 0.92
+  adaptive_horizon: true
+  planning_margin: 0.20
+  certified_margin: 0.45
+
+safety:
+  shield_frequency: 20
+  use_cbf_clf_qp: false     # Phase 3+
+  use_exact_rollout: false   # Phase 3+
+  use_backup_validator: false  # Phase 3+
+  use_visibility_speed: false # Phase 3+
+  zero_slack_for_urgent: false # Phase 3+
+
+fallback:
+  cautious_speed_scale: 0.3
+  yield_duration: 1.0
+  recovery_required_frames: 10
+  min_fallback_time: 0.5
+
+runtime:
+  use_incremental_update: false  # Phase 3+
+  use_active_set: false       # Phase 3+
+  stale_plan_timeout: 0.3
+  full_refresh_on_occlusion: true

@@ -1,0 +1,16 @@
+# toy_demo.yaml — SafeDyn minimal demo configuration
+safe_dyn:
+  use_authorization: true
+  fail_closed: true
+  log_certificate: true
+  check_uncertified: true
+
+  tube:
+    planning_margin: 0.20
+    certified_margin: 0.45
+    planning_scale: 1.0
+    certified_scale: 2.0
+
+  obstacle:
+    max_entities: 10
+    default_radius: 0.3

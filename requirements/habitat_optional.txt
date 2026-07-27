@@ -1,0 +1,10 @@
+# Optional: Habitat integration
+# Habitat-Sim must be built from source; see https://github.com/facebookresearch/habitat-sim
+
+# Installation:
+# pip install habitat-sim --find-links https://github.com/facebookresearch/habitat-sim/releases
+# or build from source (recommended for 0.3.3)
+
+# Additional habitat dependencies
+# gym>=0.18
+# networkx>=2.5

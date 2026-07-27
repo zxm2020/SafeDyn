@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+title: SafeDyn-VLN Guard (Method)
+message: >-
+  If you use this software, cite the method paper.
+type: software
+authors:
+  - given-names: (Paper Authors)
+    family-names: (Placeholder)
+license: Apache-2.0
+repository-code: "https://github.com/<USER>/SafeDyn-VLN-Guard"
+preferred-citation:
+  type: article
+  authors:
+    - given-names: (Paper Authors)
+      family-names: (Placeholder)
+  title: SafeDyn-VLN Guard — Runtime Actuator Authorization for VLN
+  year: 2025

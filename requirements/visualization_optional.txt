@@ -1,0 +1,5 @@
+# Optional: Visualization for logged tick plotting
+matplotlib>=3.5
+seaborn>=0.11
+opencv-python>=4.5
+Pillow>=9.0
