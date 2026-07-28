@@ -15,11 +15,7 @@ This repository reproduces the **SafeDyn-VLN Guard method**:
 - Certificate LEDGER, bypass, and uncertified-exec tracking
 - Lightweight demos and tests (no Habitat scenes, no ETPNav weights required)
 
-It does **not** reproduce:
-- All paper research questions (RQs) or formal batch experiments
-- All paper tables (Table 1, 2, 3) or Excel workbooks
-- Large-scale Habitat/MP3D campaign (160 route figures, full ETPNav evaluation)
-- Generated paper figures or PDFs
+
 
 ## Relationship to the Paper
 
